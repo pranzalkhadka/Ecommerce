@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order History</title>
+    <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" crossorigin="anonymous">
+    <!-- Include Font Awesome for icons -->
+    <script src="https://use.fontawesome.com/8ac91384ee.js"></script>
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa;
+        }
+
+        header {
+            background-color: #343a40;
+        }
+
+        .navbar-brand h1 {
+            color: #fff;
+            font-size: 24px;
+        }
+
+        .navbar-brand img {
+            border-radius: 50%;
+        }
+
+        .navbar-nav .nav-link {
+            color: #fff !important;
+        }
+
+        .navbar-nav .dropdown-menu {
+            background-color: #343a40;
+        }
+
+        .navbar-nav .dropdown-item {
+            color: #fff !important;
+        }
+
+        .navbar-nav .dropdown-item:hover {
+            background-color: #495057;
+        }
+
+        .search-form {
+            width: 50%;
+        }
+
+        main {
+            padding: 20px 0;
+        }
+
+        h2.text-center {
+            color: #343a40;
+            margin-bottom: 30px;
+        }
+
+        .order-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            background-color: #fff;
+            margin-bottom: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .order-item img {
+            width: 70px;
+            height: 70px;
+            border-radius: 10px;
+        }
+
+        .order-details {
+            flex-grow: 1;
+            margin-left: 20px;
+        }
+
+        .order-date, .order-status {
+            color: #6c757d;
+        }
+
+        .badge-success {
+            background-color: #28a745;
+        }
+
+        .badge-warning {
+            background-color: #ffc107;
+        }
+
+        .badge-danger {
+            background-color: #dc3545;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <!-- Navigation Bar (similar to index.html) -->
+        <nav class="navbar navbar-main navbar-expand-lg navbar-dark">
+            <a href="#" class="navbar-brand">
+                <h1>RUCKSACK</h1>
+            </a>
+            <a href="#"><img src="/Images/mountainlogo.jpg" alt="brandlogo" height="50px"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <form class="search-form form-inline mx-auto">
+                    <input class="searchbar form-control mr-sm-2" type="search" placeholder="Search from over 710,000 products and 1712 brands.." aria-label="Search" id="search-bar">
+                    <button class="search-button btn btn-outline-info my-2 my-sm-0" type="submit">Search</button>
+                </form>
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Sign-In</a>
+                    </li>
+                    <!-- Dropdown for My-Cart -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            My-Cart
+                            <i class="fa fa-cart-plus"></i>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="current_items.html">Current Items</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="order_history.html">Order History</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="container mt-4">
+            <h2 class="text-center">Order History</h2>
+            <div class="row mt-4">
+                <!-- Example of displaying order history -->
+                <div class="col-md-8 offset-md-2">
+                    <div class="order-item">
+                        <img src="Images/img14.jpg" alt="Order item image">
+                        <div class="order-details">
+                            <h5>Blue jersey</h5>
+                            <p class="order-date">Date of Purchase: 2024-06-21</p>
+                            <span class="badge badge-success">Delivered</span>
+                        </div>
+                        <span class="badge badge-primary badge-pill">NRS 2500</span>
+                    </div>
+                    <div class="order-item">
+                        <img src="Images/img15.jpg" alt="Order item image">
+                        <div class="order-details">
+                            <h5>Green Jogger</h5>
+                            <p class="order-date">Date of Purchase: 2024-06-15</p>
+                            <span class="badge badge-warning">In Transit</span>
+                        </div>
+                        <span class="badge badge-primary badge-pill">NRS 3500</span>
+                    </div>
+                    <div class="order-item">
+                        <img src="Images/img16.jpg" alt="Order item image">
+                        <div class="order-details">
+                            <h5>Black pant</h5>
+                            <p class="order-date">Date of Purchase: 2024-06-10</p>
+                            <span class="badge badge-danger">Canceled</span>
+                        </div>
+                        <span class="badge badge-primary badge-pill">NRS 4500</span>
+                    </div>
+                    <!-- Replace with dynamic content fetched from backend if needed -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Include Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+</body>
+</html>

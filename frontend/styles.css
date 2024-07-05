@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&family=Play:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed&family=Gemunu+Libre&display=swap');
+
+/* Navigation Bar  */
+
+#navbar {
+    padding: 16px 175px;
+    font-family: 'Fira Sans Condensed', sans-serif;
+}
+
+a.navbar-brand {
+    padding: 11px 0px 0px 0px;
+    margin: 0px 8px 0px 0px;
+}
+
+#navbar h1 {
+    font-size: 1.4rem;
+    font-family: 'Play', sans-serif;
+}
+
+
+/* Search Bar  */
+
+#search-bar {
+    width: 36vw;
+}
+
+
+/* Secondary navbar  */
+
+#secondary-nav {
+    font-family: 'Fira Sans Condensed', sans-serif;
+}
+
+.nav-item a {
+    color: black;
+}
+
+
+/* Brands Navbar  */
+
+.brandLogo {
+    margin: 10px;
+}
+
+.logoimage {
+    opacity: 0.5;
+}
+
+.logoimage:hover {
+    opacity: 1;
+}
+
+
+/* Shopping cards  */
+
+#item-container {
+    padding: 15px 80px;
+    background-color: whitesmoke;
+}
+
+.item-card-deck {
+    padding: 4px 50px;
+}
+
+.item-card {
+    margin: 5px 0px;
+}
+
+.overlay {
+    margin: 0px 15px;
+    padding: 3%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: auto;
+    width: auto;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: rgb(8, 8, 8);
+    text-align: center;
+    color: ghostwhite;
+}
+
+.overlay-text {
+    position: absolute;
+    top: 4rem;
+    color: whitesmoke;
+}
+
+.item-card:hover .overlay {
+    opacity: 0.8;
+}
+
+
+/* Best sellers carousel */
+
+.heading-text {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 24px;
+    line-height: 1.4;
+    letter-spacing: 0.023em;
+    font-family: 'Fira Sans Condensed', sans-serif;
+}
+
+#best-sellers {
+    padding: 15px 50px;
+    margin: 45px 0px;
+    border: 2px solid gray;
+}
+
+.card-text {
+    text-align: center;
+}
+
+
+/* About us section  */
+
+#about-container {
+    padding: 15px 80px;
+    color: gray;
+}
+
+.secondary-heading {
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.about-text {
+    font-size: 0.8rem;
+}
+
+
+/* Footer and Call To Action */

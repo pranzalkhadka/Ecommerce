@@ -1,0 +1,5 @@
+fastapi[all]
+pymysql
+SQLAlchemy==2.0.20
+mysqlclient==2.1.1
+python-dotenv
