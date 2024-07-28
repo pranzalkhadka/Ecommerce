@@ -1,26 +1,34 @@
-from fastapi import FastAPI, HTTPException, Query
-from typing import List
+
+from fastapi import FastAPI, HTTPException
+from pydantic import BaseModel
+from fastapi.responses import JSONResponse
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
 
-men_shoes = [
-    {"name": "pants", "price": 99.99},
-    {"name": "Running Shoes", "price": 79.99},
-    {"name": "Trail Shoes", "price": 89.99},
-]
+# Dummy data to represent registered users
+users_db = {
+    "pranjal@gmail.com": "password",
+    "pukar@gmail.com" : "password123"
+}
 
-women_shoes = [
-    {"name": "Hiking Boots", "price": 89.99},
-    {"name": "Running Shoes", "price": 69.99},
-    {"name": "Trail Shoes", "price": 79.99},
-]
+class LoginRequest(BaseModel):
+    email: str
+    password: str
 
-@app.get("/api/search", response_model=List[dict])
-def search_products(query: str = Query(None, min_length=1)):
-    results = []
+# CORS configuration
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # Allows all origins
+    allow_credentials=True,
+    allow_methods=["*"],  # Allows all methods
+    allow_headers=["*"],  # Allows all headers
+)
 
-    for item in men_shoes + women_shoes:
-        if query.lower() in item["name"].lower():
-            results.append(item)
-
-    return results
+@app.post("/login")
+async def login(request: LoginRequest):
+    user_password = users_db.get(request.email)
+    if user_password and user_password == request.password:
+        return JSONResponse(content={"success": True, "message": "Login successful"}, status_code=200)
+    else:
+        return JSONResponse(content={"success": False, "message": "Invalid email or password"}, status_code=401)
