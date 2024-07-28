@@ -1,5 +1,5 @@
 document.getElementById('signin-form').addEventListener('submit', function (event) {
-    event.preventDefault(); // Prevent the default form submission
+    event.preventDefault();
 
     const email = document.getElementById('email').value;
     const password = document.getElementById('password').value;
@@ -14,9 +14,9 @@ document.getElementById('signin-form').addEventListener('submit', function (even
     .then(response => response.json())
     .then(data => {
         if (data.success) {
-            window.location.href = 'logged_page.html'; // Redirect to asd.html on successful login
+            window.location.href = 'logged_page.html';
         } else {
-            alert(data.message); // Display the error message from the server
+            alert(data.message);
         }
     })
     .catch(error => {
